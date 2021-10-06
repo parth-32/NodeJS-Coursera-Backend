@@ -20,6 +20,7 @@ const errorHandler = require("./src/utils/errorHandler");
 app.use("/auth", require("./src/routes/auth.route"));
 app.use("/category", require("./src/routes/category.route"));
 app.use("/course", require("./src/routes/course.route"));
+app.use("/enroll", require("./src/routes/enroll.route"));
 
 app.all("*", (req, res) => {
 	throw new appError(`Route: ${req.method} ${req.url} is not defined`, 404);

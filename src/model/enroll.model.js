@@ -1,31 +1,27 @@
-const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
-const courseSchema = mongoose.Schema(
+const enrollSchema = mongoose.Schema(
 	{
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
-			required: true,
-            trim: true,
-            ref="Users"
+			ref: "User",
 		},
-        course: {
-            type: mongoose.Schema.Types.ObjectId,
-			required: true,
-            trim: true,
-            ref="Course"
-        },
-		status: [
+		course: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Course",
+		},
+		week_status: [
 			{
-                weekId: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    required: true
+				_id: {
+					type: mongoose.Schema.Types.ObjectId,
+					required: true,
+					alias: "week",
 				},
 				finished: {
 					type: Boolean,
 					required: true,
-					default: false
-				}
+					default: false,
+				},
 			},
 		],
 	},
@@ -34,18 +30,18 @@ const courseSchema = mongoose.Schema(
 	}
 );
 
-courseSchema.virtual("user_id", {
+enrollSchema.virtual("user_id", {
 	ref: "Users",
 	localField: "user",
 	foreignField: "_id",
 });
 
-courseSchema.virtual("week_id", {
+enrollSchema.virtual("course_id", {
 	ref: "Course",
-	localField: "status.weekId",
-	foreignField: "weeks._id",
+	localField: "course",
+	foreignField: "_id",
 });
 
-const Course = mongoose.model("Course", courseSchema);
+const Enroll = mongoose.model("Enroll", enrollSchema);
 
-module.exports = Course;
+module.exports = Enroll;
