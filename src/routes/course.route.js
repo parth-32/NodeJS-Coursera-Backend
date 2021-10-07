@@ -7,6 +7,7 @@ const {
 	getCourse,
 	getCourseById,
 	updateCourse,
+	getAllCourse,
 } = require("../controller/course.controller");
 
 const auth = require("../auth/verify.auth");
@@ -22,5 +23,12 @@ router.get("/:categoryId", getCourse);
 
 /** Get Course by course Id */
 router.get("/id/:courseId", getCourseById);
+
+/** Get All Course (with filtration query)
+ * filter = popular
+ * filter = recent
+ * filter = top_rated
+ */
+router.get("/all/query", getAllCourse);
 
 module.exports = router;
