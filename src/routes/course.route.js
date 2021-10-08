@@ -28,6 +28,8 @@ router.get("/id/:courseId", getCourseById);
  * filter = popular
  * filter = recent
  * filter = top_rated
+ * level = advanced,mixed,intermediate, beginner
+ * language = english,hindi, ...
  */
 router.get("/all/query", getAllCourse);
 

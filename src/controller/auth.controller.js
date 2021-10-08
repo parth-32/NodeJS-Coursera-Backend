@@ -1,3 +1,4 @@
+const Enroll = require("../model/enroll.model");
 const User = require("../model/user.model");
 
 /**********************************
@@ -46,4 +47,36 @@ const login = async (req, res, next) => {
 	}
 };
 
-module.exports = { register, login };
+const profile = async (req, res, next) => {
+	try {
+		const profile = await Enroll.find({
+			user: req.userData._id,
+		}).populate({
+			path: "course",
+			select: "title",
+		});
+		const summary = await Enroll.find({ user: req.userData._id });
+
+		const in_progress = summary.filter((data) =>
+			data.week_status.some((status) => status.finished === false)
+		).length;
+
+		const completed = summary.filter((data) =>
+			data.week_status.every((status) => status.finished === true)
+		).length;
+
+		res.send({
+			data: {
+				user: await req.userData.getPublicData(),
+				total_course: profile,
+				summary: {
+					enrolled: summary.length,
+					in_progress,
+					completed,
+				},
+			},
+		});
+	} catch (error) {}
+};
+
+module.exports = { register, login, profile };
