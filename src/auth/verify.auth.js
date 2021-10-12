@@ -23,7 +23,10 @@ const auth = async (req, res, next) => {
 
 		next();
 	} catch (error) {
-		next(error);
+		res.status(400).send({
+			errorMsg: "invalid",
+		});
+		// next(error);
 	}
 };
 

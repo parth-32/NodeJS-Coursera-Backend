@@ -7,6 +7,7 @@ const {
 	getEnrolledCourseStatus,
 	updateWeekStatus,
 	getUserEnrolledCourse,
+	certificateVerify,
 } = require("../controller/enroll.controller");
 
 const auth = require("../auth/verify.auth");
@@ -22,5 +23,8 @@ router.patch("/", auth, updateWeekStatus);
 
 /** Get User Enrolled Courses */
 router.get("/course/me", auth, getUserEnrolledCourse);
+
+/** Get Certificate Verification Status */
+router.get("/verify/certificate/:enrollId", certificateVerify);
 
 module.exports = router;

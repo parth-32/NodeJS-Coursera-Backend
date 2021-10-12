@@ -21,6 +21,10 @@ const getCourse = async (req, res, next) => {
 		var limit;
 		var skip;
 		var match = { category: req.params.categoryId };
+
+		//limit
+		req.query?.limit && (limit = 4);
+
 		//level
 		const level = req.query?.level;
 		level && (match.level = { $in: level.split(",") });
@@ -33,14 +37,14 @@ const getCourse = async (req, res, next) => {
 			limit = 4;
 			skip = page * limit - limit;
 		}
-		console.log(match);
+		// console.log(match);
 		const category = await Category.findById(req.params.categoryId).select(
 			"name"
 		);
 
 		const course = await Course.find(match)
 			.select("-category")
-			.limit(page && limit)
+			.limit((page && limit) || (req.query?.limit && limit))
 			.skip(page && skip);
 
 		res.status(201).send({

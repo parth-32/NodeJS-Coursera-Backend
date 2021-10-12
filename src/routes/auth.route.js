@@ -7,7 +7,12 @@ const {
 	loginValidation,
 } = require("../validation/auth.validation");
 
-const { register, login, profile } = require("../controller/auth.controller");
+const {
+	register,
+	login,
+	profile,
+	check,
+} = require("../controller/auth.controller");
 
 /** Register */
 router.post("/register", registerValidation, register);
@@ -17,5 +22,7 @@ router.post("/login", loginValidation, login);
 
 /** Profile */
 router.get("/profile/me", auth, profile);
+
+router.get("/check", auth, check);
 
 module.exports = router;

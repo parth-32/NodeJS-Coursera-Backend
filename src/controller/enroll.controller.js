@@ -98,9 +98,44 @@ const getUserEnrolledCourse = async (req, res, next) => {
 	}
 };
 
+const certificateVerify = async (req, res, next) => {
+	try {
+		var data;
+		const status = await Enroll.find({
+			_id: req.params.enrollId,
+			"week_status.finished": true,
+		})
+			.populate({
+				path: "course",
+				select: "title offer_by",
+			})
+			.populate({
+				path: "user",
+				select: "name",
+			})
+			.select("-week_status");
+
+		if (status.length > 0) {
+			data = { ...status[0]._doc, status: "verified" };
+		} else {
+			data = {
+				user: { name: "-" },
+				updatedAt: "-",
+				course: { title: "-" },
+				status: "Unverified",
+			};
+		}
+
+		res.send({ data });
+	} catch (error) {
+		next(error);
+	}
+};
+
 module.exports = {
 	enrollCourse,
 	getEnrolledCourseStatus,
 	updateWeekStatus,
 	getUserEnrolledCourse,
+	certificateVerify,
 };

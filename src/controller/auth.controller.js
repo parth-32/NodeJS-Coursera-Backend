@@ -1,3 +1,4 @@
+const e = require("express");
 const Enroll = require("../model/enroll.model");
 const User = require("../model/user.model");
 
@@ -53,7 +54,7 @@ const profile = async (req, res, next) => {
 			user: req.userData._id,
 		}).populate({
 			path: "course",
-			select: "title",
+			select: "title offer_by",
 		});
 		const summary = await Enroll.find({ user: req.userData._id });
 
@@ -76,7 +77,21 @@ const profile = async (req, res, next) => {
 				},
 			},
 		});
-	} catch (error) {}
+	} catch (error) {
+		next(error);
+	}
 };
 
-module.exports = { register, login, profile };
+const check = async (req, res, next) => {
+	try {
+		res.status(200).send({
+			data: "done",
+		});
+	} catch (error) {
+		res.status(400).send({
+			data: "error",
+		});
+	}
+};
+
+module.exports = { register, login, profile, check };
