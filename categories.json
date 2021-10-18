@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "615ad1cee4f97daa95d2ebb0"
+  },
+  "name": "Information Technology",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/information_technology.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:05:02.389Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:05:02.389Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad1fee4f97daa95d2ebb7"
+  },
+  "name": "Data Science",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/data_science.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:05:50.807Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:05:50.807Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad216e4f97daa95d2ebbe"
+  },
+  "name": "Business",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/business.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:06:14.069Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:06:14.069Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad229e4f97daa95d2ebc5"
+  },
+  "name": "Computer Science",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/computer_science.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:06:33.057Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:06:33.057Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad241e4f97daa95d2ebcc"
+  },
+  "name": "Personal Development",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/personal_development.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:06:57.825Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:06:57.825Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad272e4f97daa95d2ebd9"
+  },
+  "name": "Health",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/health.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:07:46.121Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:07:46.121Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad294e4f97daa95d2ebe6"
+  },
+  "name": "Language Learning",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/language_learning.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:08:20.603Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:08:20.603Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ad2e4e4f97daa95d2ebed"
+  },
+  "name": "Math And Logic",
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/business.png",
+  "createdAt": {
+    "$date": "2021-10-04T10:09:40.861Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-04T10:09:40.861Z"
+  },
+  "__v": 0
+}]
